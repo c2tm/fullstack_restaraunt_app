@@ -1,0 +1,87 @@
+.order-view-container {
+  display: flex;
+  justify-content: center;
+}
+
+.order-nav-container {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.order-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #8e0000;
+  align-items: flex-end;
+  height: 4rem;
+  width: 100%;
+}
+
+.order-page-nav-list {
+  margin: 1rem 7rem 0 0;
+  padding: 0;
+}
+
+.order-page-nav-list > li {
+  list-style: none;
+}
+
+.order-page-back-button {
+  border: none;
+  background-color: #ff7b00;
+  width: 4rem;
+  height: 2rem;
+}
+
+.order-page-back-button:hover {
+  cursor: pointer;
+}
+
+/* ////////////////////////////////ORDER LIST */
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffa200;
+  width: 80%;
+  height: auto;
+  margin: 5rem 0 0 0;
+  padding: 2rem;
+  padding-bottom: 0;
+}
+
+.order-list > h1 {
+  margin: 0 0 2rem 0;
+}
+
+.order-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 2rem 0;
+}
+
+.order-item > img {
+  width: 100px;
+  height: 100px;
+}
+
+.order-item > img,
+.order-item > h2,
+.order-item > p {
+  margin: 0 1rem 0 1rem;
+}
+
+.place-order-button {
+  border: none;
+  margin: 0 0 2rem 0;
+  width: 20.3rem;
+  height: 3rem;
+  background-color: #ff7b00;
+}
+
+.place-order-button:hover {
+  cursor: pointer;
+}
