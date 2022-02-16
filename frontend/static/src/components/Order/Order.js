@@ -1,20 +1,50 @@
+import Cookies from "js-cookie";
 import './Order.css';
 import OrderList from './OrderList';
 import OrderNav from './OrderNav';
 
 function Order(props) {
 
+    let orderObj = {
+        name: 'Placeholder',
+        items: props.orderState,
+        subtotal: null
+    }
+
+    const handleError = (err) => {
+        console.warn(err);
+    }
+
     const handlePlaceOrderClick = () => {
-        let localStorageValue = JSON.parse(localStorage.getItem(`newOrder`))
-        console.log(localStorageValue);
-        if (localStorageValue === null) {
-            localStorage.setItem(`newOrder`, JSON.stringify(props.orderState));
-        }   else {
-            let newLocalStorageValue = [localStorageValue, props.orderState];
-            localStorage.setItem(`newOrder`, JSON.stringify(newLocalStorageValue));
-        }
+        // let localStorageValue = JSON.parse(localStorage.getItem(`newOrder`))
+        // console.log(localStorageValue);
+        // if (localStorageValue === null) {
+        //     localStorage.setItem(`newOrder`, JSON.stringify(props.orderState));
+        // }   else {
+        //     let newLocalStorageValue = [localStorageValue, props.orderState];
+        //     localStorage.setItem(`newOrder`, JSON.stringify(newLocalStorageValue));
+        // }
         
-        console.log(localStorage.getItem(`newOrder`));
+        const addOrder = async () => {
+            console.log(orderObj);
+            const options = {
+                method: "POST",
+                headers: {
+                  "Content-type": "application/json",
+                  'X-CSRFToken': Cookies.get('csrftoken'),
+                },
+                body: JSON.stringify(orderObj),
+              }
+    
+              const response = await fetch("/api/v1/menu/orders/", options).catch(handleError);
+    
+              if(!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+        }
+
+        addOrder()
+        
         props.setPageDisplayed(4);
     }
 
@@ -24,6 +54,7 @@ function Order(props) {
             subtotal += props.orderState[i].price;
         }
         subtotal = subtotal.toFixed(2);
+        orderObj.subtotal = subtotal
         return subtotal;
     }
 

@@ -1,48 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './MenuPage.css'
 import MenuNav from './MenuNav'
 import MenuFavItems from './MenuFavItems';
 import MenuList from './MenuList';
 
-const MENU_ITEMS = [{
-    name: `example1`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`,
-  },{
-    name: `example2`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  },{
-    name: `example3`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  },{
-    name: `example4`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  },{
-    name: `example5`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  },{
-    name: `example6`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  },{
-    name: `example7`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  },{
-    name: `example8`,
-    price: 10.00,
-    src: `https://picsum.photos/200/300`
-  }]
-
-// const MENU_ITEMS = ;
-
 function MenuPage(props) {
 
-    const [menuItems, setMenuItems] = useState(MENU_ITEMS);
+    const [menuItems, setMenuItems] = useState(null);
+
+    const handleError = (err) => {
+        console.warn(err);
+    }
+
+    useEffect(() => {
+    
+        const getMenuItems = async () => {
+        
+          const response = await fetch('/api/v1/menu/').catch(handleError);
+          if(!response.ok) {
+            throw new Error('Network reponse was not OK!')  
+          } else {
+              const data = await response.json();
+              setMenuItems(data);
+            }
+          }
+          getMenuItems();
+        }, [])
+    
+    
+
+    if(!menuItems) {
+        return <div>Fetching data...</div>
+    }
 
     return(
         <div className="menu-page-container">

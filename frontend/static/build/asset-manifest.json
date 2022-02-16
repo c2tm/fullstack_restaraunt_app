@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-restaurant-app/static/css/main.07bdc148.css",
-    "main.js": "/react-restaurant-app/static/js/main.f400c92a.js",
-    "static/js/787.9661e67c.chunk.js": "/react-restaurant-app/static/js/787.9661e67c.chunk.js",
-    "index.html": "/react-restaurant-app/index.html",
-    "main.07bdc148.css.map": "/react-restaurant-app/static/css/main.07bdc148.css.map",
-    "main.f400c92a.js.map": "/react-restaurant-app/static/js/main.f400c92a.js.map",
-    "787.9661e67c.chunk.js.map": "/react-restaurant-app/static/js/787.9661e67c.chunk.js.map"
+    "main.css": "/static/css/main.07bdc148.css",
+    "main.js": "/static/js/main.a632ddb2.js",
+    "static/js/787.9661e67c.chunk.js": "/static/js/787.9661e67c.chunk.js",
+    "index.html": "/index.html",
+    "main.07bdc148.css.map": "/static/css/main.07bdc148.css.map",
+    "main.a632ddb2.js.map": "/static/js/main.a632ddb2.js.map",
+    "787.9661e67c.chunk.js.map": "/static/js/787.9661e67c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.07bdc148.css",
-    "static/js/main.f400c92a.js"
+    "static/js/main.a632ddb2.js"
   ]
 }
