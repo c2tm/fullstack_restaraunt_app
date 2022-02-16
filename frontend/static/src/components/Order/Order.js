@@ -8,7 +8,8 @@ function Order(props) {
     let orderObj = {
         name: 'Placeholder',
         items: props.orderState,
-        subtotal: null
+        subtotal: null,
+        active: true,
     }
 
     const handleError = (err) => {
@@ -16,14 +17,6 @@ function Order(props) {
     }
 
     const handlePlaceOrderClick = () => {
-        // let localStorageValue = JSON.parse(localStorage.getItem(`newOrder`))
-        // console.log(localStorageValue);
-        // if (localStorageValue === null) {
-        //     localStorage.setItem(`newOrder`, JSON.stringify(props.orderState));
-        // }   else {
-        //     let newLocalStorageValue = [localStorageValue, props.orderState];
-        //     localStorage.setItem(`newOrder`, JSON.stringify(newLocalStorageValue));
-        // }
         
         const addOrder = async () => {
             console.log(orderObj);

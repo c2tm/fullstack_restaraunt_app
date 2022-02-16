@@ -14,10 +14,18 @@ function LandingPage(props) {
                     <LandingPageNavList />
                 </nav>
             </div>
+            
             <div className='landing-page-blurred-container'>
                 <h1>Hungry? Order now.</h1>
                 <button type="button" className='landing-page-blurred-container-button' onClick={handleClick}>Menu</button>
             </div>
+            <footer className="footer">
+                <div>
+                    <button type='button' onClick={() => props.setPageDisplayed(5)}>
+                        Admin
+                    </button>
+                </div>
+            </footer>
         </div>
     )
 }

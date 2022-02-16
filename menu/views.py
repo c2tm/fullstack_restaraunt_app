@@ -15,5 +15,10 @@ class MenuListAPIView(generics.ListAPIView):
 
 
 class OrderListCreateAPIView(generics.ListCreateAPIView):
-    queryset: OrderItem.objects.all()
+    queryset = OrderItem.objects.all()
+    serializer_class = OrderSerializer
+
+
+class OrderListDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = OrderItem.objects.all()
     serializer_class = OrderSerializer

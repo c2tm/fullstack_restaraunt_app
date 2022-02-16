@@ -81,3 +81,9 @@
 .landing-page-blurred-container-button:hover {
   cursor: pointer;
 }
+
+.footer {
+  background-color: black;
+  z-index: 10;
+  align-items: flex-end;
+}

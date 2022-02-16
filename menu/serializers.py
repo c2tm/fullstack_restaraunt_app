@@ -11,4 +11,4 @@ class MenuSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
-        fields = ('name', 'items', 'subtotal')
+        fields = ('id', 'name', 'items', 'subtotal', 'active')
